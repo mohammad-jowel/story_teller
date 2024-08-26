@@ -1,6 +1,10 @@
 # Interactive Storytelling Platform
 
 ## Overview
+<video width="320" height="240" controls>
+  <source src="Demo.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
 An interactive storytelling platform where users can read or create stories with branching narratives. The platform supports multiple story paths based on user choices and provides authors with insights into how readers interact with their stories.
 
 ## Features
