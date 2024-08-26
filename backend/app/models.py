@@ -25,7 +25,7 @@ class Paragraph(models.Model):
         }
 
     def __str__(self):
-        return f"Paragraph of {self.story.title}"
+        return f"S: {self.story.title} T: {self.text[0:5]}"
 
 class Option(models.Model):
     name = models.CharField(max_length=120)

@@ -7,7 +7,7 @@ from .models import Story, Paragraph, Option
 
 @api_view(["GET"])
 def index(request):
-    stories = Story.objects.all()
+    stories = Story.objects.all().reverse()
     stories_list = [story_serializer(story) for story in stories]
     return Response(stories_list, status=status.HTTP_200_OK)
 
@@ -41,8 +41,19 @@ def write_story(request):
 
 @api_view(["POST"])
 def add_option(request):
-    curr_para_id = request.data['_para_id']
-    
+    prev_para_id = request.data['prev_para_id']
+    prev_para = Paragraph.objects.get(pk=prev_para_id)
+    next_para = Paragraph(text=request.data['text'], story = prev_para.story)
+    option = Option(
+        name = request.data['name'],
+        curr_paragraph =  prev_para,
+        next_paragraph = next_para
+    )
+    next_para.save() 
+    option.save()
+    option = option.serializer()
+    option["text"] = request.data['text']
+    return Response(option, status=status.HTTP_201_CREATED)
 
 def story_serializer(story):
     serialized_story = story.serializer()

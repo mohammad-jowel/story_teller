@@ -22,9 +22,10 @@ const Home = () => {
           <h1 className="text-left text-2xl font-extrabold tracking-tight leading-none text-gray-900 md:text-3xl lg:text-4xl dark:text-white">
             Stories
           </h1>
-          <a href='/write' type="button" class="text-white bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-2 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 shadow-lg shadow-green-500/50 dark:shadow-lg dark:shadow-green-800/80 font-medium rounded-lg text-sm px-4 py-2 text-center me-2 mb-2">
+          <a href="/write" type="button" class="text-white bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 shadow-lg shadow-green-500/50 dark:shadow-lg dark:shadow-green-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">
             Write
           </a>
+
         </div>
         <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" /> 
 
@@ -36,7 +37,7 @@ const Home = () => {
                     {story.title}
                 </h2>
                 <p className="mb-4 text-md font-medium text-gray-300 dark:text-gray-300">
-                    {story.first_para.text.substring(0,60)+'..'}
+                    {story.first_para.text.substring(0,200)+'..'}
                 </p>
                 <div className="flex justify-between items-center">
                     <div className="flex items-center space-x-4">
